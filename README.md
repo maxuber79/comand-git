@@ -7,20 +7,21 @@ Incluye comandos esenciales, tips útiles y algunos atajos pro pa’ devs con es
 
 ## 🔗 Menú Rápido
 
-* [Configuración Básica](#%EF%B8%8F-configuraci%C3%B3n-b%C3%A1sica)
-* [Alias Útiles](#-alias-%C3%BAtiles)
+* [Configuración Básica](#️-configuración-básica)
+* [Alias Útiles](#-alias-útiles)
 * [Iniciando un Repositorio](#-iniciando-un-repositorio)
 * [GIT ADD](#-git-add)
 * [GIT COMMIT](#-git-commit)
-* [GIT PUSH / PULL](#%EF%B8%8F-git-push--pull)
+* [GIT PUSH / PULL](#️-git-push--pull)
 * [GIT LOG](#-git-log)
 * [GIT DIFF](#-git-diff)
 * [GIT RESET / HEAD](#-git-reset--head)
 * [GIT BRANCH](#-git-branch)
 * [GIT REBASE](#-git-rebase)
 * [GIT REMOTE](#-git-remote)
-* [GIT TAG](#%EF%B8%8F-git-tag)
+* [GIT TAG](#️-git-tag)
 * [Limpieza](#-limpieza)
+* [Alias GIT Personalizados](#-alias-git-personalizados--webmain-edition)
 * [Tips WEBMAIN](#-tips-webmain)
 * [Autor](#-autor)
 
@@ -48,7 +49,7 @@ git config --global color.ui true
 
 ---
 
-## 🧯 Alias Útiles
+## 🧩 Alias Útiles
 
 Crea alias cortos para tus comandos más usados:
 
@@ -375,6 +376,107 @@ Revertir un merge o commit:
 git log
 git reset --hard <commit_sha>
 ```
+
+---
+
+## 🧩 Alias GIT Personalizados — WEBMAIN Edition
+
+Estos son los alias configurados actualmente en tu entorno Git.
+Sirven para ejecutar comandos largos con nombres cortos y rápidos ⚡
+
+```bash
+# 📄 Alias actuales (desde git-aliases.txt)
+git st  →  git status -sb
+git cm  →  git commit -m
+git br  →  git branch
+git ch  →  git checkout
+git lg  →  git log --oneline --graph --decorate --all
+```
+
+---
+
+## ⚙️ Cómo agregar alias de forma global
+
+Los alias se guardan en el archivo global de configuración de Git (`~/.gitconfig`),
+por lo que se aplican en **todos tus proyectos**.
+
+### 🧠 Crear alias manualmente
+
+Podés usar este formato en la terminal:
+
+```bash
+git config --global alias.<nombre> "<comando>"
+```
+
+Por ejemplo:
+
+```bash
+git config --global alias.st "status -sb"
+git config --global alias.cm "commit -m"
+git config --global alias.br "branch"
+git config --global alias.ch "checkout"
+git config --global alias.lg "log --oneline --graph --decorate --all"
+```
+
+> 💡 El flag `--global` los hace válidos para todos los repositorios.
+> Si querís que el alias funcione solo en un proyecto, omití `--global`.
+
+---
+
+### 🧩 Ver tus alias configurados
+
+Listar solo los alias:
+
+```bash
+git config --get-regexp alias
+```
+
+Ver toda tu configuración:
+
+```bash
+git config --list
+```
+
+Abrir el archivo global en VS Code:
+
+```bash
+code ~/.gitconfig
+```
+
+---
+
+### 💾 Exportar tus alias a un archivo
+
+Si querís guardarlos o documentarlos:
+
+```bash
+git config --get-regexp alias > git-aliases.txt
+```
+
+Y luego podés incluirlos o actualizarlos en tu README.md (como este 😎).
+
+---
+
+### 🔁 Importar alias desde archivo (opcional)
+
+Si querís aplicar todos tus alias guardados en otro equipo:
+
+1. Abrí tu `.gitconfig` con:
+
+   ```bash
+   code ~/.gitconfig
+   ```
+2. Pegá el bloque `[alias]` que tenías respaldado.
+3. Guardá el archivo y ¡listo!
+   Tus alias ya quedan activos globalmente.
+
+---
+
+## 💡 Consejo WEBMAIN
+
+Si querís probar un alias antes de hacerlo global, podís crear uno temporal sin `--global`.
+Si te gusta, lo promovís después con el flag global.
+Así mantenís tu `.gitconfig` limpio y ordenado 🔥
 
 ---
 
