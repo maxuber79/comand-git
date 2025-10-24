@@ -1,0 +1,50 @@
+cat > .gitignore << 'EOF'
+# 🧠 ARCHIVOS Y CARPETAS IGNORADAS (WEBMAIN Edition)
+
+# Dependencias de Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Builds / Distribuciones
+dist/
+build/
+out/
+
+# Archivos temporales
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# Config locales (no subir credenciales)
+.env
+.env.local
+.env.*.local
+
+# IDE / Editor
+.vscode/
+.idea/
+*.code-workspace
+
+# SAP UI5 / BAS
+*.zip
+tmp/
+.cache/
+.destinations/
+.sap/
+
+# Angular / React / SCSS
+coverage/
+.sass-cache/
+*.map
+
+# Mac / Windows / Linux
+ehthumbs.db
+desktop.ini
+
+# Archivos personales o de prueba
+test/
+__pycache__/
+private/
+EOF
