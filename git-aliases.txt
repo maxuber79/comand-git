@@ -19,3 +19,5 @@ alias.dropall stash clear
 alias.pushup push -u origin HEAD
 alias.cleanbr !git branch --merged | grep -vE '(^\*|main|master|dev)' | xargs git branch -d
 alias.recent log -10 --pretty=format:'%C(yellow)%h%Creset %Cgreen%cd%Creset %C(bold blue)%an%Creset %s' --date=short
+alias.untrack rm --cached
+alias.untrackall rm -r --cached .

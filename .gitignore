@@ -5,6 +5,7 @@ cat > .gitignore << 'EOF'
 node_modules/
 npm-debug.log
 yarn-error.log
+badges-git.txt
 
 # Builds / Distribuciones
 dist/

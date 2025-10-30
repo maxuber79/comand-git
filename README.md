@@ -1,7 +1,12 @@
 # 🧠 Guía Rápida GIT — WEBMAIN Edition 💻
 
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![.gitignore](https://img.shields.io/badge/.gitignore-File-red?style=for-the-badge&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white)
+
 Documentación base para configurar, iniciar y trabajar con repositorios GIT.
-Incluye comandos esenciales, tips útiles y algunos atajos pro pa’ devs con estilo. 😎
+Incluye comandos esenciales, tips útiles y algunos atajos pro pa' devs con estilo. 😎
 
 ---
 
@@ -331,6 +336,29 @@ Eliminar remoto:
 ```bash
 git remote remove origin
 ```
+## 🔎 RASTREO DE ARCHIVOS
+
+Ver archivos no rastreados:
+
+```bash
+git ls-files --others --exclude-standard
+```
+Dejar de rastrear archivos en remoto
+
+```bash
+git rm --cached <archivo>
+```
+Nota: Esto elimina el archivo del repositorio pero lo mantiene en tu sistema local.
+
+Estos comandos utilizan git rm --cached que:
+
+Elimina los archivos del índice de Git (deja de rastrearlos)
+NO elimina los archivos físicamente de tu directorio de trabajo
+Los archivos seguirán existiendo localmente pero Git ya no los rastreará
+Uso típico:
+
+Después de agregar archivos al ![.gitignore](https://img.shields.io/badge/.gitignore-File-red?style=flat&logo=git&logoColor=white) y querer que Git deje de rastrear archivos que ya estaban siendo seguidos
+Para eliminar archivos sensibles del repositorio remoto sin borrarlos localmente
 
 ---
 
