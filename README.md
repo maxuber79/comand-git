@@ -485,6 +485,34 @@ Y luego podés incluirlos o actualizarlos en tu README.md (como este 😎).
 
 ---
 
+### Otros comandos útiles
+
+Borrar carpeta node_modules:
+```bash
+rm -rf node_modules
+```
+
+Borrar archivo package-lock.json:
+```bash
+rm -f package-lock.json
+```
+Verificar si quedo limpio:
+```bash
+ls -l node_modules
+```
+Si quieres hacerlo en una sola línea (speedrun):
+```bash
+rm -rf node_modules && rm -f package-lock.json && ls -l node_modules
+```
+
+---
+
+
+
+
+
+
+
 ### 🔁 Importar alias desde archivo (opcional)
 
 Si querís aplicar todos tus alias guardados en otro equipo:
